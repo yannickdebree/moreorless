@@ -1,0 +1,9 @@
+# Visual Studio Code
+/.vscode/
+
+# Code::Blocks
+/bin/
+/obj/
+/moreorless.cbp
+/moreorless.depend
+/moreorless.layout
