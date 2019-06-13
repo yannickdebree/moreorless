@@ -5,12 +5,18 @@
 
 int MAX = 100, MIN = 1;
 
+int main();
+void playAGame();
+void clearConsole();
+void levelChoice();
+int askANewGame();
+
 int main()
 {
     srand(time(NULL));
     int isRunning = 1;
 
-    while(isRunning == 1)
+    while (isRunning == 1)
     {
         playAGame();
         isRunning = askANewGame();
@@ -25,24 +31,24 @@ void playAGame()
     levelChoice();
     int mysteryNumber = (rand() % (MAX - MIN + 1)) + MIN, promptedValue = 0, nbrRounds = 0;
 
-    while(promptedValue != mysteryNumber)
+    while (promptedValue != mysteryNumber)
     {
         nbrRounds++;
         printf("What is the number between %d and %d ? ", MIN, MAX);
         scanf("%d", &promptedValue);
-        if(promptedValue < MIN || promptedValue > MAX)
+        if (promptedValue < MIN || promptedValue > MAX)
         {
             printf("Please enter an integer between %d and %d.\n", MIN, MAX);
         }
-        else if(promptedValue > mysteryNumber)
+        else if (promptedValue > mysteryNumber)
         {
             printf("Less !\n");
         }
-        else if(promptedValue < mysteryNumber)
+        else if (promptedValue < mysteryNumber)
         {
             printf("More !\n");
         }
-        else if(promptedValue == mysteryNumber)
+        else if (promptedValue == mysteryNumber)
         {
             printf("You've win in %d rounds !\n", nbrRounds);
         }
@@ -57,11 +63,11 @@ void clearConsole()
 void levelChoice()
 {
     int level = 0, minLevel = 1, maxLevel = 5;
-    while(level < minLevel || level > maxLevel)
+    while (level < minLevel || level > maxLevel)
     {
         printf("Choice a level : (from %d to %d) : ", minLevel, maxLevel);
         scanf("%d", &level);
-        if(level < minLevel || level > maxLevel)
+        if (level < minLevel || level > maxLevel)
         {
             printf("Please choice a number between %d and %d. \n", minLevel, maxLevel);
         }
@@ -72,11 +78,11 @@ void levelChoice()
 int askANewGame()
 {
     int answer = 2;
-    while(answer != 0 &&  answer != 1)
+    while (answer != 0 && answer != 1)
     {
         printf("An other game ? (Yes = 1, No = 0) ? ");
         scanf("%d", &answer);
-        if(answer != 0 &&  answer != 1)
+        if (answer != 0 && answer != 1)
         {
             printf("Please enter 0 or 1 to continue.\n");
         }
