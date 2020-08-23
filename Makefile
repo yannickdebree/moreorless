@@ -1,7 +1,12 @@
-test: build run
+.PHONY: all
+all: build run
 
+.PHONY: build
 build:
 	gcc -o moreorless main.c -lm
 
-run:
+.PHONY: run
+run: moreorless
 	./moreorless
+
+moreorless: build
